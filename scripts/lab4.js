@@ -6,7 +6,7 @@
  * @returns The sum of the two numbers if add is true and false otherwise.
  */
 function sumValues(num1, num2, add) {
-    if(Number.isInteger(num1) === false || Number.isInteger(num2) === false) {
+    if(typeof num1 !== 'number' || typeof num2 !== 'number') {
         return false;
     }
     if (add) {
@@ -33,7 +33,7 @@ function discountPrices(prices, discount) {
     if (length === 0) {
         return false;
     }
-    if(Number.isInteger(discount) === false || discount < 0 || discount > 1) {
+    if(typeof discount !== 'number' || discount < 0 || discount > 1) {
         return false;
     }
     for(let i = 0; i < length; i++) {
