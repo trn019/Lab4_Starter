@@ -33,7 +33,10 @@ function discountPrices(prices, discount) {
     if (length === 0) {
         return false;
     }
-    if(typeof discount !== 'number' || discount < 0 || discount > 1) {
+    if(typeof discount !== 'number' || !Array.isArray(prices)) {
+        return false;
+    }
+    if(discount < 0 || discount > 1){
         return false;
     }
     for(let i = 0; i < length; i++) {
